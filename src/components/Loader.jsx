@@ -1,7 +1,7 @@
 import {motion} from 'framer-motion'
 
 const Loader = ({setShowLoader}) => {
-    const fadeLoader = {
+    const showLoader = {
         hidden:{
             clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
             transition:{
@@ -17,7 +17,7 @@ const Loader = ({setShowLoader}) => {
         }
     }
 
-    const letterDelay = {
+    const textStagger = {
         hidden:{
             opacity:0,
         },
@@ -28,7 +28,7 @@ const Loader = ({setShowLoader}) => {
             }
         },
     }
-    const letterDelayChildren = {
+    const textStaggerChildren = {
         hidden: {
             opacity: 0,
           },
@@ -55,19 +55,19 @@ const Loader = ({setShowLoader}) => {
 
   return (
     <motion.div 
-        variants={fadeLoader}
+        variants={showLoader}
         initial="hidden"
         animate="show"
         onAnimationComplete={() => setShowLoader(false)}
         className='h-screen w-screen bg-[#242424] flex flex-col  items-center justify-center overflow-hidden relative'>
         <motion.h1 
-            variants={letterDelay}
+            variants={textStagger}
             initial="hidden"
             animate="show"
             className='text-[#eaeaea] tracking-wider text-6xl absolute top-1/2 transform -translate-y-1/2 z-50'>
             {Array.from("Welcome").map((letter,idx) => (
                 <motion.span 
-                    variants={letterDelayChildren}
+                    variants={textStaggerChildren}
                     key={idx}>{letter}
                 </motion.span>
             ))}

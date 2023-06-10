@@ -17,7 +17,7 @@ function App() {
     }
   }
 
-  const paintMain = {
+  const paintImage = {
     hidden:{
       clipPath: 'polygon(0 0, 100% 0, 100% 0, 0 0)'
     },
@@ -71,7 +71,7 @@ function App() {
               </div>
               <div className="px-4 w-full h-[450px] overflow-hidden relative">
                 <motion.img
-                  variants={paintMain}
+                  variants={paintImage}
                   initial="hidden"
                   animate="show"
                   src="/art.webp" 
